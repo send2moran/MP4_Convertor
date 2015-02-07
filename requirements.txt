@@ -1,2 +1,0 @@
-PyFlakes==0.8.1
-gunicorn==0.17.2
