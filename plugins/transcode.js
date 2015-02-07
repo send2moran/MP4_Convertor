@@ -63,7 +63,9 @@ var transcode = function(res,path) {
     args.push('pipe:1');
     console.log('spawning ffmpeg %s', args.join(' '));
 
+    //trans.writeToFile('mp4');
     trans.stream().pipe(res);
+
 
   //}).listen(port);
   //console.log('started webserver on address %s using port %s', ip, port);

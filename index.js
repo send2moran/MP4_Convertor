@@ -27,19 +27,27 @@ app.get('/', function (req, res) {
 
 // accept POST request on the homepage
 app.post('/', function (req, res) {
-  var video = req.session.video;
-  video = req.session.video = req.body.video;
+  var video = '';
+  var id = req.body.id;
+  if(!req.session.videoArr){
+    video = req.session.videoArr = {};
+  }
+  video = req.session.videoArr[id] = (video = req.body.video);
   res.send('video set');
 })
 
 // accept PUT request at /user
 app.get('/mp4', function (req, res) {
-  var video = req.session.video;
-  console.log(video);
+  var video = req.session.videoArr && req.session.videoArr[req.query.id];
+  if(!video){
+    res.write('no video found');
+    res.end();
+  }
+  video = req.session.videoArr[req.query.id];
   transcode(res,video);
 })
 
-var server = app.listen(3000, function () {
+var server = app.listen(8080, function () {
   var host = server.address().address
   var port = server.address().port
   console.log('Example app listening at http://%s:%s', host, port)
