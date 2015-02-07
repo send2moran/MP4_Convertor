@@ -11,7 +11,7 @@
     "npm": "2.1.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha --timeout 5000 tests",
     "start": "node index.js"
   },
   "author": "Simon Kusterer",
@@ -67,5 +67,9 @@
     "url": "^0.10.2",
     "xml2js": "^0.4.4",
     "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "mocha": "2.1.0",
+    "expect.js": "0.3.1"
   }
 }
