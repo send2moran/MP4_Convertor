@@ -1,4 +1,5 @@
-FROM   jrottenberg/ffmpeg:2.4.3
+#FROM   jrottenberg/ffmpeg:2.4.3
+FROM send2moran/ffmpeg
 
 # Enable EPEL for Node.js
 RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm

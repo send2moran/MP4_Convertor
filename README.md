@@ -1,5 +1,8 @@
 #For HTTPS Support in ffmpeg:
 brew reinstall ffmpeg --with-openssl !!!!!
+
+
+
 BUILDPACK_URL
 //https://github.com/brooks/heroku-buildpack-ffmpeg-x264
 //https://github.com/integricho/heroku-buildpack-python-ffmpeg
