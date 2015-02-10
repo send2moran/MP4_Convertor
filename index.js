@@ -47,6 +47,14 @@ app.get('/mp4', function (req, res) {
   transcode(res,video);
 })
 
+
+// accept PUT request at /user
+app.get('/get/mp4', function (req, res) {
+  //https%3A%2F%2Fapi-integration-c.whipclip.com%2Fv1%2Fmedia%2Fvideo%2Ftypes%2Fhls%2Fstreams%2Fus_hbo_hls_320p%3FmediaContext%3Da.dXNfaGJvfDE0MjMyNDczODAwMDB8MTQyMzI0NzQyNDAwMHwxNDIzNTY4NTk3NzYx.2b94643643c63b5502398ed3d48fcdfddce33cd431605a5c4681af997617d3c8%26startOffset%3D0%26endOffset%3D44000%26mediaSource%3DS3%26timestamp%3D1423546800000
+  transcode(res,req.query.id,req.query.st, req.query.dur, req.query.pl);
+})
+
+
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address
   var port = server.address().port

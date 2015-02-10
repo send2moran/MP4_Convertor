@@ -6,7 +6,7 @@ var url = require('url');
 var port = 4103;
 
 
-var transcode = function(res,path) {
+var transcode = function(res,path,startTime,endTime,bitRate,playlist) {
   var ip = internalIp();
   //http.createServer(function(req, res) {
 
@@ -45,12 +45,26 @@ var transcode = function(res,path) {
       .videoCodec('h264')
       .format('mp4')
       .custom('strict', 'experimental')
+      //.videoBitrate('1800')
       .on('finish', function() {
         console.log('finished transcoding');
       })
       .on('error', function(err) {
         console.log('transcoding error: %o', err);
+        res.write('transcoding error: %o', err);
+        res.end();
+        return;
       });
+
+    //set start time
+    if(startTime){
+      trans.custom('ss',startTime);
+    }
+
+    //set duration of clip
+    if(endTime){
+      trans.custom('t',endTime);
+    }
 
     for (var key in opts) {
       trans.custom(key, opts[key]);
