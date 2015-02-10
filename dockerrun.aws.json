@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image" : {
-    "Name" : “send2moran/videotestwhip”
+    "Name" : "send2moran/videotestwhip:latest"
   },
   "Ports" : [
     {"ContainerPort" : 8080}
