@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+var debug          = require('debug')('workers');
+var app            = require('../index');
+var chalk          = require('chalk');
+var cluster        = require('cluster');
+
+
+app.set('port', process.env.PORT || 3000);
+//
+// http://nodejs.org/api/cluster.html
+// http://rowanmanning.com/posts/node-cluster-and-express/
+//
+// Cluster with the debug module
+// https://github.com/joyent/node/issues/5318#issuecomment-16702390
+//
+// TODO: Look into Domains to handle errors
+// http://nodejs.org/api/domain.html#domain_warning_don_t_ignore_errors
+//
+if (cluster.isMaster) {
+	// Count the machine's CPUs
+	var cpuCount = require('os').cpus().length;
+
+	// Create a worker for each CPU
+	for (var i = 0; i < cpuCount; i += 1) {
+		cluster.fork();
+	}
+
+	// Listen for dying workers
+	cluster.on('exit', function (worker) {
+		// Replace the dead worker,
+		// we're not sentimental
+		debug('Worker ' + worker.id + ' died :(');
+		cluster.fork();
+	});
+
+	console.log('[%s] Listening on port %d', chalk.blue(app.settings.env), app.get('port'));
+} else {
+	var server = app.listen(app.get('port'), function() {
+		debug('   Worker ' + cluster.worker.id + ' running');
+	});
+}
