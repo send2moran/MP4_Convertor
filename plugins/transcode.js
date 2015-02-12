@@ -3,6 +3,8 @@ var internalIp = require('internal-ip');
 var Transcoder = require('stream-transcoder');
 var grabOpts = require('../utils/grab-opts');
 var url = require('url');
+var FormData = require('form-data');
+//var Facebook = require('facebook-node-sdk');
 var port = 4103;
 
 
@@ -34,7 +36,9 @@ var transcode = function(res,path,startTime,endTime,bitRate,playlist) {
     };
 
 
+    //res.setHeader('content-type', 'multipart/form-data');
     res.setHeader('content-type', 'video/mp4');
+    //TODO :: try sending content-type multi/form for sending data to facebook upload page
     var opts = grabOpts(ctx.options, 'ffmpeg-');
     console.log('incoming request for path %s', orgPath);
     res.writeHead(200, {
@@ -51,9 +55,6 @@ var transcode = function(res,path,startTime,endTime,bitRate,playlist) {
       })
       .on('error', function(err) {
         console.log('transcoding error: %o', err);
-        res.write('transcoding error: %o', err);
-        res.end();
-        return;
       });
 
     //set start time

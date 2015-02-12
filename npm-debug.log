@@ -1,21 +1,96 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'multipart-form-stream',
+1 verbose cli   '--save' ]
 2 info using npm@1.4.28
-3 info using node@v0.10.33
-4 error install Couldn't read dependencies
-5 error Failed to parse json
-5 error Unexpected token }
-6 error File: /Users/Helmano/Projects/MP4_Convertor/package.json
-7 error Failed to parse package.json data.
-7 error package.json must be actual JSON, not just JavaScript.
-7 error
-7 error This is not a bug in npm.
-7 error Tell the package author to fix their package.json file. JSON.parse
-8 error System Darwin 14.1.0
-9 error command "node" "/usr/local/bin/npm" "install"
-10 error cwd /Users/Helmano/Projects/MP4_Convertor
-11 error node -v v0.10.33
-12 error npm -v 1.4.28
-13 error file /Users/Helmano/Projects/MP4_Convertor/package.json
-14 error code EJSONPARSE
-15 verbose exit [ 1, true ]
+3 info using node@v0.10.36
+4 warn package.json url@0.10.2 url is also the name of a node core module.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'multipart-form-stream', null ]
+7 verbose cache add name=undefined spec="multipart-form-stream" args=["multipart-form-stream",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'multipart-form-stream',
+8 verbose parsed url   path: 'multipart-form-stream',
+8 verbose parsed url   href: 'multipart-form-stream' }
+9 silly lockFile 4c4475fe-multipart-form-stream multipart-form-stream
+10 verbose lock multipart-form-stream /Users/Helmano/.npm/4c4475fe-multipart-form-stream.lock
+11 silly lockFile 4c4475fe-multipart-form-stream multipart-form-stream
+12 silly lockFile 4c4475fe-multipart-form-stream multipart-form-stream
+13 verbose addNamed [ 'multipart-form-stream', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 8275ed37-multipart-form-stream multipart-form-stream@
+16 verbose lock multipart-form-stream@ /Users/Helmano/.npm/8275ed37-multipart-form-stream.lock
+17 silly addNameRange { name: 'multipart-form-stream', range: '*', hasData: false }
+18 verbose request where is /multipart-form-stream
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id 640c41a3c5bc9e3b
+21 verbose url raw /multipart-form-stream
+22 verbose url resolving [ 'https://registry.npmjs.org/', './multipart-form-stream' ]
+23 verbose url resolved https://registry.npmjs.org/multipart-form-stream
+24 verbose request where is https://registry.npmjs.org/multipart-form-stream
+25 info trying registry request attempt 1 at 23:37:29
+26 http GET https://registry.npmjs.org/multipart-form-stream
+27 http 200 https://registry.npmjs.org/multipart-form-stream
+28 silly registry.get cb [ 200,
+28 silly registry.get   { date: 'Wed, 11 Feb 2015 21:37:30 GMT',
+28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     etag: '"82GNZM4U1I5GS0OLE768S6LOU"',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=60',
+28 silly registry.get     'content-length': '2754',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-ams4133-AMS',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1423690650.002327,VS0,VE649',
+28 silly registry.get     vary: 'Accept',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 silly addNameRange number 2 { name: 'multipart-form-stream', range: '*', hasData: true }
+30 silly addNameRange versions [ 'multipart-form-stream', [ '0.0.0' ] ]
+31 verbose addNamed [ 'multipart-form-stream', '0.0.0' ]
+32 verbose addNamed [ '0.0.0', '0.0.0' ]
+33 silly lockFile bb07efcf-multipart-form-stream-0-0-0 multipart-form-stream@0.0.0
+34 verbose lock multipart-form-stream@0.0.0 /Users/Helmano/.npm/bb07efcf-multipart-form-stream-0-0-0.lock
+35 silly lockFile 56aee7c3--multipart-form-stream-0-0-0-tgz https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+36 verbose lock https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz /Users/Helmano/.npm/56aee7c3--multipart-form-stream-0-0-0-tgz.lock
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz',
+37 verbose addRemoteTarball   'ad5d0b65d1b6e61aa7aca06ad7bdf4f441359c9f' ]
+38 info retry fetch attempt 1 at 23:37:30
+39 verbose fetch to= /tmp/npm-65484-OMlsWoKT/registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+40 http GET https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+41 http 400 https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+42 error fetch failed https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+43 silly lockFile 56aee7c3--multipart-form-stream-0-0-0-tgz https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+44 silly lockFile 56aee7c3--multipart-form-stream-0-0-0-tgz https://registry.npmjs.org/multipart-form-stream/-/multipart-form-stream-0.0.0.tgz
+45 silly lockFile bb07efcf-multipart-form-stream-0-0-0 multipart-form-stream@0.0.0
+46 silly lockFile bb07efcf-multipart-form-stream-0-0-0 multipart-form-stream@0.0.0
+47 silly lockFile 8275ed37-multipart-form-stream multipart-form-stream@
+48 silly lockFile 8275ed37-multipart-form-stream multipart-form-stream@
+49 error Error: 400 Bad Request
+49 error     at WriteStream.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/fetch.js:58:12)
+49 error     at WriteStream.emit (events.js:117:20)
+49 error     at evalmachine.<anonymous>:1610:14
+49 error     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+49 error     at Object.oncomplete (evalmachine.<anonymous>:108:15)
+50 error If you need help, you may report this *entire* log,
+50 error including the npm and node versions, at:
+50 error     <http://github.com/npm/npm/issues>
+51 error System Darwin 14.1.0
+52 error command "node" "/usr/local/bin/npm" "install" "multipart-form-stream" "--save"
+53 error cwd /Users/Helmano/Projects/MP4_Convertor
+54 error node -v v0.10.36
+55 error npm -v 1.4.28
+56 verbose exit [ 1, true ]
